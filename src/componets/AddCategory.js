@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 export const AddCategory = ({setCategories}) => {
 
-    const [inputValue, setInputValue] = useState('');
+    const [inputValue, setInputValue] = useState('');//se utiliza para el actulaizar el campo de texto
     const handleInputChange = (e)=> {
-        setInputValue( e.target.value);
+        setInputValue( e.target.value);//se le coloca el valor que tenga el campo de texto en el momento que cambia
     }
-    const handleSubmit = (e) =>{
-        e.preventDefault();
+    const handleSubmit = (e) =>{//Es el evento del formulario
+        e.preventDefault();//para evitar que la pagina se refresque 
         if (inputValue.trim().length > 2) {
-            setCategories(cats => [ inputValue,...cats]);  
-            setInputValue('');          
+            setCategories(cats => [ inputValue,...cats]);  //se agrega el valor del input a las catergorias mediante la funcion pasada como argumento
+            setInputValue('');  //limpia el campo de texto        
         }
         
     }

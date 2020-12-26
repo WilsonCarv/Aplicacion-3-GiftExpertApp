@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { getGifts } from "../helpers/getGifts";
 
 export const useFetchGits = (category)=>{
-const [state, setstate] = useState(
+const [state, setstate] = useState( //Se inicia el state con valores del objeto por defecto
     {
         data: [],
         loading: true
@@ -11,12 +11,12 @@ const [state, setstate] = useState(
    useEffect(()=>{
         getGifts(category)
         .then(imgs=>{          
-                setstate({
+                setstate({  //Se atualiza el state con los vlaores que trae desde la peticion http
                     data:imgs,
                     loading: false
                 })
         })
-   }, [category])
+   }, [category])//solo cuando la category haya cambiado
 
-    return state
+    return state //retorna el nuevo estado
 }

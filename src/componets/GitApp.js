@@ -3,19 +3,15 @@ import { AddCategory } from './AddCategory';
 import {GiftGrid} from './GiftGrid'
 
 export const GitApp = () => {
-    //const categories = ['One Punch', 'Samurai X', 'Dragon Ball'];
 
-    const [categories, setCategories] = useState( ['One Punch']);
-    // const handleAdd =() => {
-    //     setCategories([...categories,'Naruto']);   
-    //}
+    const [categories, setCategories] = useState( ['One Punch']);//se inicia la lista con una categoria por defecto
     return (
         <div>
             <h2>GiftExpertApp</h2>
             <AddCategory setCategories={setCategories}></AddCategory>
             <hr/>
- 
-           <ol>
+            {/* expresion utilizada para colocar codigo js en el jsx */}
+           <ol> 
             {
                     categories.map((category) => (
                    <GiftGrid key={category}
